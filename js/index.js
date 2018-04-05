@@ -125,6 +125,7 @@ function fnTab() {
         auto();
     }
     auto();
+    fnScore();
     function auto() {
         oTimer = setInterval(function() {
             iNow++;
@@ -141,5 +142,32 @@ function fnTab() {
             removeClass(aNav[i], 'active');
         }
         addClass(aNav[iNow], 'active')
+    }
+}
+
+function fnScore() {
+    var oScore = id('score');
+    var aLi = oScore.querySelectorAll("li");
+    var aScore = ['太差了，再也不来了', '差强人意', '一般般', '很好，感觉很直', '体验太棒了']
+    for(var i = 0, len = aLi.length; i < len; i ++) {
+        fnStar(aLi[i]);
+    }
+    function fnStar(oLi) {
+        var aNav = oLi.querySelectorAll('a');
+        var oInput = oLi.querySelector('input');
+        for(var i = 0, len = aNav.length; i < len; i ++) {
+            aNav[i].dataset.index = i;
+            addEvent(aNav[i], 'touchstart', function () {
+                var index = this.dataset.index;
+                for(var j = 0, len = aNav.length; j < len; j ++) {
+                    if(aNav[j].dataset.index <= index) {
+                        addClass(aNav[j], 'active');
+                    } else {
+                        removeClass(aNav[j], 'active');
+                    }
+                }
+                oInput.value = aScore[index];
+            });
+        }
     }
 }

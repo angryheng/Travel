@@ -32,6 +32,10 @@ blockquote:before, blockquote:after, q:before, q:after {
     content: none;
 }
 
+a, input {
+    -webkit-tap-highlight-color: transparent;
+}
+
 strong {
     font-weight: bold;
 }
@@ -335,4 +339,42 @@ body {
 
 .picMask nav a.active {
     opacity: 1;
+}
+
+#score {
+    width: 100%;
+    padding: 12px 0 0 26px;
+}
+
+#score h2 {
+    font-size: 28px;
+    height: 60px;
+    line-height: 60px;
+}
+
+#score li {
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+}
+
+#score nav {
+    position: absolute;
+    left: 187px;
+    top: 0;
+    height: 60px;
+}
+
+#score nav a {
+    float: left;
+    width: 38px;
+    height: 36px;
+    margin-top: 12px;
+    margin-right: 39px;
+    background: url("../img/star.png") no-repeat -38px 0;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+#score nav a.active {
+    background-position : 0 0;
 }
