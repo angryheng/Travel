@@ -56,6 +56,20 @@ p {
     color: #333;
 }
 
+.clearfix {
+	zoom : 1;
+}
+.clearfix::before,
+.clearfix::after {
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	clear: both;
+}
+
 body {
     position: relative;
     font-family: Arial, "微软雅黑";
@@ -343,7 +357,8 @@ body {
 
 #score {
     width: 100%;
-    padding: 12px 0 0 26px;
+    padding: 12px 0 22px 26px;
+    border-bottom: 1px solid #ccc;
 }
 
 #score h2 {
@@ -377,4 +392,35 @@ body {
 }
 #score nav a.active {
     background-position : 0 0;
+}
+
+.tags {
+    padding: 12px 0 0 26px;  
+}
+
+.tags h2 {
+    font-size: 28px;
+    line-height : 60px;
+}
+.tags label {
+    float: left;
+    margin: 10px 14px 10px 3px;
+}
+.tags label input {
+    display : none;
+}
+
+.tags label span {
+    float: left;
+    height: 50px;
+    line-height : 50px;
+    padding: 0 24px;
+    border: 1px solid #cdd6e1;
+    background-color : #fff;
+    border-radius : 26px;
+}
+.tags label input:checked+span {
+    border: 1px solid #3c9bbb;
+    background-color : #3c9bbb;
+    color : #fff;
 }
