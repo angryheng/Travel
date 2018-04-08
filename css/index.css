@@ -57,17 +57,17 @@ p {
 }
 
 .clearfix {
-	zoom : 1;
+    zoom: 1;
 }
-.clearfix::before,
-.clearfix::after {
-	content: ".";
-	display: block;
-	height: 0;
-	line-height: 0;
-	overflow: hidden;
-	visibility: hidden;
-	clear: both;
+
+.clearfix::before, .clearfix::after {
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
 }
 
 body {
@@ -390,37 +390,74 @@ body {
     -webkit-transition: .5s;
     transition: .5s;
 }
+
 #score nav a.active {
-    background-position : 0 0;
+    background-position: 0 0;
 }
 
 .tags {
-    padding: 12px 0 0 26px;  
+    padding: 12px 0 0 26px;
 }
 
 .tags h2 {
     font-size: 28px;
-    line-height : 60px;
+    line-height: 60px;
 }
+
 .tags label {
     float: left;
     margin: 10px 14px 10px 3px;
 }
+
 .tags label input {
-    display : none;
+    display: none;
 }
 
 .tags label span {
     float: left;
     height: 50px;
-    line-height : 50px;
+    line-height: 50px;
     padding: 0 24px;
     border: 1px solid #cdd6e1;
-    background-color : #fff;
-    border-radius : 26px;
+    background-color: #fff;
+    border-radius: 26px;
 }
+
 .tags label input:checked+span {
     border: 1px solid #3c9bbb;
-    background-color : #3c9bbb;
-    color : #fff;
+    background-color: #3c9bbb;
+    color: #fff;
+}
+
+.info {
+    position: absolute;
+    bottom: 90px;
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+}
+
+.btn {
+    position: absolute;
+    bottom: 17px;
+    left: 17px;
+    width: 606px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    color: #666;
+    border: 0 none;
+    border-radius: 5px;
+}
+
+.submit {
+    background: #3c9bbb;
+    color: #fff;
 }
